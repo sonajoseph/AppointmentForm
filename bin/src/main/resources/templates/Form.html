@@ -54,7 +54,7 @@
   	<div class="col-md-12">
   	<form>
   		<div class="  well"> 
-  			<div><h3> Appointment</h3></div>
+  			<div><h3>Book Appointment</h3></div>
   			
   			<div class="row"> 
 	  			<div class="col-md-2"> 
@@ -75,18 +75,9 @@
 	  				<input  required="required" type="text" placeholder="Please Enter Last name." name="userForm-LName" id="userForm-LName">
 	  			</div>
   			</div>
-  			
   			<div class="row"> 
   			<div class="col-md-6"> 
-  			<textarea   required="required" rows="4" cols="30" id="userForm-Address" name="userForm-Address"></textarea>
-  				<label for="userForm-Address">Address</label>
-  		    </div>
-  		    </div>
-  		    
-  		    
-  			<div class="row"> 
-  			<div class="col-md-6"> 
-  				<label id="userForm-Date">Date of Appointment</label>
+  				<label id="userForm-Date">Date Time</label>
   				<div class="form-group">
 	                
 	                <div class="input-group date" id="example">
@@ -141,7 +132,6 @@
 											<th>Id</th>
 											<th>First Name</th> 
 											<th>Last Name</th>
-											<th>Address</th>
 											<th>Date</th>
 											<th>Message</th> 
 											<th>Download</th>   
@@ -207,7 +197,6 @@
 	                 row.append( $('<td>').append(item.id));
 	                row.append( $('<td>').append(item.firstname)); 
 	                row.append($('<td>').append(item.lastname));
-		            row.append( $('<td>').append(item.address));
 	                row.append( $('<td>').append(item.dateTime));
 	                row.append( $('<td>').append(item.comments));  
 	                var Buttons="<button id='download_"+item.id+ "' class='downloadBtn btn btn-primary' >Download</button>";
@@ -238,7 +227,6 @@
 			var fName=$("#userForm-FName").val();
 			var lName=$("#userForm-LName").val();
 			var dateTime=$("#dateTime").val();
-			var address=$("#userForm-Address").val();
 			var message=$("#userForm-Message").val(); 
 			if(title != "" && fName != "" && lName != "" &&  message != "" && dateTime != ""){  
 				var formData={
@@ -246,8 +234,7 @@
 						firstname : fName,
 						lastname : lName,
 						dateTime : dateTime,
-						comments : message ,
-						address:address
+						comments : message 
 				};
 				
 				console.log(formData);
@@ -298,7 +285,6 @@
 		                row.append( $('<td>').append(item.id));
 		               row.append( $('<td>').append(item.firstname)); 
 		               row.append($('<td>').append(item.lastname));
-		               row.append( $('<td>').append(item.address));
 		               row.append( $('<td>').append(item.dateTime));
 		               row.append( $('<td>').append(item.comments));  
 		               var Buttons="<button id='download_"+item.id+ "'  class='downloadBtn btn btn-primary' >Download</button>";
