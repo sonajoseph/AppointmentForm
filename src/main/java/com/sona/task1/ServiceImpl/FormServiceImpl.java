@@ -28,6 +28,13 @@ public class FormServiceImpl implements FormService{
 		
 		return formRepo.findByfirstname(firstname);
 	}
+
+
+	@Override
+	public List<Forms> findAll() {
+		
+		return null;
+	}
 	
 
 }

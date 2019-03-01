@@ -26,9 +26,9 @@ public class GeneratePdfReport {
 
         try {
 
-            PdfPTable table = new PdfPTable(5);
+            PdfPTable table = new PdfPTable(6);
             table.setWidthPercentage(100);
-            table.setWidths(new int[]{1, 3, 3,3,3});
+            table.setWidths(new int[]{1, 3, 3,3,3,3});
 
             Font headFont = FontFactory.getFont(FontFactory.HELVETICA_BOLD);
 
@@ -45,11 +45,15 @@ public class GeneratePdfReport {
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(hcell);
             
+            hcell = new PdfPCell(new Phrase("Address", headFont));
+            hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
+            table.addCell(hcell);
             
             hcell = new PdfPCell(new Phrase("Date", headFont));
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
             table.addCell(hcell);
             
+           
             
             hcell = new PdfPCell(new Phrase("Message", headFont));
             hcell.setHorizontalAlignment(Element.ALIGN_CENTER);
@@ -72,6 +76,11 @@ public class GeneratePdfReport {
                 table.addCell(cell);
 
                 cell = new PdfPCell(new Phrase(form.getLastname()));
+                cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
+                cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
+//                cell.setPaddingRight(5);
+                table.addCell(cell);
+                cell = new PdfPCell(new Phrase(form.getAddress()));
                 cell.setVerticalAlignment(Element.ALIGN_MIDDLE);
                 cell.setHorizontalAlignment(Element.ALIGN_RIGHT);
 //                cell.setPaddingRight(5);

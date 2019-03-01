@@ -17,6 +17,7 @@ public class Forms {
 	private String lastname;
 	private String dateTime; 
 	private String comments;
+	private String address;
 	
 	
 	public int getId() {
@@ -54,6 +55,12 @@ public class Forms {
 	}
 	public void setComments(String comments) {
 		this.comments = comments;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	} 
 	
 	

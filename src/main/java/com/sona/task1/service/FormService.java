@@ -8,5 +8,6 @@ public interface FormService {
 	
 	public Forms save(Forms form);
 	public List<Forms> findByfirstname(String firstname);
+	public List<Forms> findAll();
 
 }

@@ -11,7 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -26,10 +26,8 @@ import com.sona.task1.repo.FormRepository;
 
 
 public class FormCreationApplicationTests {
-	/*
-	@InjectMocks
-	FormController formController;
-	@InjectMocks
+	@Autowired
+	
 	FormServiceImpl formService;
 	@Mock
 	FormRepository formrepo;
@@ -53,23 +51,16 @@ public class FormCreationApplicationTests {
 		}
 
 	@Test
-	public void testGetEvents(){
+	public void testByNames(){
 		Forms s= new Forms();
-		when(formrepo.findByfirstname(anyString())).thenReturn(Arrays.asList(getForms()));//here we are mocked the database conection
-		assertEquals(1, formService.findByfirstname("").size());//one object is created and it is returned.
+		when(formrepo.findByfirstname(anyString())).thenReturn(Arrays.asList(getForms()));
+		assertEquals(7, formService.findByfirstname("sona").size());
 		
 		
 	}
 	
-	@Test
-	public void testAssert(){
-		when(formrepo.findByfirstname(anyString())).thenReturn(Arrays.asList(getForms()));
-		assertNotNull(getForms());
-		assertEquals("birthday", form.getFirstname());
-		assertEquals(1, form.getId());
-		
+
 	
-		
-	}*/
+	
 
 }
