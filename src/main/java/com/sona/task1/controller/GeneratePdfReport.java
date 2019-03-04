@@ -19,13 +19,13 @@ import com.sona.task1.model.Forms;
 
 public class GeneratePdfReport {
 
-    public static ByteArrayInputStream citiesReport(List<Forms> forms) {
+    public static ByteArrayInputStream formReport(List<Forms> forms) {
 
         Document document = new Document();
         ByteArrayOutputStream out = new ByteArrayOutputStream();
 
         try {
-
+            //data in a table
             PdfPTable table = new PdfPTable(6);
             table.setWidthPercentage(100);
             table.setWidths(new int[]{1, 3, 3,3,3,3});
@@ -99,18 +99,18 @@ public class GeneratePdfReport {
 //                cell.setPaddingRight(5);  
                 table.addCell(cell);
             }
-
+ //written to bytearrayoutputstream && table is inserted into the pdf document
             PdfWriter.getInstance(document, out);
             document.open();
             document.add(table);
-            
+            //In order for the data to be written to the ByteArrayOutputStream, the document must be closed.
             document.close();
             
         } catch (DocumentException ex) {
         
             Logger.getLogger(GeneratePdfReport.class.getName()).log(Level.SEVERE, null, ex);
         }
-
+ //data is returne as bytearray input stream.
         return new ByteArrayInputStream(out.toByteArray());
     }
 }

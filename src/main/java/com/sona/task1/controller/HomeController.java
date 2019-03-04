@@ -38,23 +38,23 @@ public class HomeController {
 	
 	private static final Logger logger = LoggerFactory.getLogger(FormController.class);
 	@RequestMapping("/")
-	public String welcome(Map<String, Object> model ,ModelMap modelMap) {
+	public String welcome() {
 
 		return "Form";
 	}
 	
 	@RequestMapping(value = "/pdfreport/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)
-    public ResponseEntity<InputStreamResource> citiesReport(@PathVariable String id) throws IOException {
+    public ResponseEntity<InputStreamResource> formReport(@PathVariable String id) throws IOException {
 
         Forms forms = formRepo.findOneById(Integer.parseInt(id));
         List<Forms> formsList=new ArrayList<Forms>();
         formsList.add(forms);
-         
-        ByteArrayInputStream bis = GeneratePdfReport.citiesReport(formsList);
-
+         //generates pdffile 
+        ByteArrayInputStream bis = GeneratePdfReport.formReport(formsList);
+ //pdf file shown directly in browser by setting inline.
         HttpHeaders headers = new HttpHeaders();
-        headers.add("Content-Disposition", "inline; filename=citiesreport.pdf");
+        headers.add("Content-Disposition", "inline; filename=formreport.pdf");
 
         return ResponseEntity
                 .ok()

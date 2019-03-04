@@ -59,6 +59,15 @@ public class FormCreationApplicationTests {
 		
 	}
 	
+	@Test
+	public void save() {
+		Forms f = new Forms(1000,"form","dsg","dsjhgsjd","adhfgsdjh","sdhghgsdjf","sdhgjfhgdjs");
+		Forms d = formrepo.save(f);
+		System.out.println(d);
+		assertEquals("form", "");
+	}
+	
+	
 
 	
 	
