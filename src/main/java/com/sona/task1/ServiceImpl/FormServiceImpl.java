@@ -24,9 +24,9 @@ public class FormServiceImpl implements FormService{
 
 
 	@Override
-	public List<Forms> findByfirstname(String firstname) {
+	public List<Forms> findByfullname(String fullname) {
 		
-		return formRepo.findByfirstname(firstname);
+		return formRepo.findByfullname(fullname);
 	}
 
 

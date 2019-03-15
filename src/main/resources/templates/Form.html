@@ -23,20 +23,20 @@
 	  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datetimepicker/4.7.14/css/bootstrap-datetimepicker.min.css">
  
-
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/0.9.0rc1/jspdf.min.js"></script>
 	
 </head>
 <body>
  
   
-<div class="container">
+<div  >
   
   
   
-  <div class="row">
+  <div class="col-md-12">
   
   
-  <div id="myModal" class="modal fade"   aria-hidden="true">
+  <div   id="myModal" class=" col-md-12 modal fade"   aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
           
@@ -49,43 +49,51 @@
         </div>
     </div>
 </div>
+<br>
       
-  	 
-  	<div class="col-md-12">
+  	  <div class="col-md-12">
+  	<div class="col-md-6">
   	<form>
   		<div class="  well"> 
   			<div><h3> Appointment</h3></div>
   			
   			<div class="row"> 
-	  			<div class="col-md-2"> 
+	  			<div class="col-md-3"> 
 	  				<label for="userForm-Title">Title</label>
-					<select id="userForm-Title" name="userForm-Title">
+					<select id="userForm-Title" onchange="titleFIll()" name="userForm-Title">
 						<option value="Mr.">Mr.</option>
 						<option value="Ms.">Ms.</option> 
 					</select>
 	  			
 	  			</div>
-	  			<div class="col-md-5">
-	  				<label for="userForm-FName">First Name</label>
-	  				<input type="text" placeholder="Please Enter First name." name="userForm-FName" id="userForm-FName" >
+	  			<div class="col-md-3">
+	  				<label for="userForm-FName">Full Name</label>
+	  				<input type="text" placeholder="Please Enter Full name." name="userForm-FName" id="userForm-FName" >
   				</div>
+  			  
   			 
-  				<div class="col-md-5">
-	  				<label for="userForm-LName">Last Name</label>
-	  				<input  required="required" type="text" placeholder="Please Enter Last name." name="userForm-LName" id="userForm-LName">
-	  			</div>
-  			</div>
+  			<div class="col-md-3">
+	  				<label for="userForm-CName">Company Name</label>
+	  				<input type="text" placeholder="Please Enter Company name." name="userForm-CName" id="userForm-CName" >
+  				</div>
+  				 
+  				 
+  			<div class="col-md-3">
+	  				<label for="userForm-JName">Job Title</label>
+	  				<input type="text" placeholder="Please Enter Job Title" name="userForm-JName" id="userForm-JName" >
+  				</div>
+  				 
   			
-  			<div class="row"> 
-  			<div class="col-md-6"> 
-  			<textarea   required="required" rows="4" cols="30" id="userForm-Address" name="userForm-Address"></textarea>
-  				<label for="userForm-Address">Address</label>
+  			 
+  			 <div class="col-md-3"> 
+  			<label for="userForm-Address">Address</label>
+  			<textarea   required="required" rows="4" cols="20" id="userForm-Address" name="userForm-Address"></textarea>
+  				
   		    </div>
-  		    </div>
+  		     
   		    
   		    
-  			<div class="row"> 
-  			<div class="col-md-6"> 
+  			<div class="col-md-4"> 
   				<label id="userForm-Date">Date of Appointment</label>
   				<div class="form-group">
 	                
@@ -98,24 +106,68 @@
 
             	</div>
   				
-  			 </div></div>
-  			 <div class="row"> 
-  			 <div class="col-md-6"> 
-  				
-  				<textarea   required="required" rows="5" cols="30" id="userForm-Message" name="userForm-Message"></textarea>
-  				<label for="userForm-Message">Message</label>
-  			</div>
-  			</div>
+  			 </div> 
+  			 
   			
-  			<div class="row"> 
+  			 
+  			</div>
+  			<div class="row" align="right"> 
   				  <button type="button" id="addAppointment"  >Submit</button>
   			</div>
   			
+  			</div>
   			
-  			
-  		</div>
+  		
   		 </form>
   	</div>
+  <div class="col-md-6" >
+  	 <h1>Letter</h1>
+  	 <div id="appointmentLetter">
+  	 	<div id="leftHeadder" align="left">
+  	 		  
+	  	 	<p> Dear <span id="employeeName">......</span></p>
+
+	<p>After a thorough and comprehensive review, I am pleased to announce that <span class="companyFill">.....</span>. would like to offer you the position of <span class="jobPosition">.....</span>.</p>
+
+	<p>Your role will begin on <span id="dateFill">....</span>. You will report every weekday to the <span class="companyFill">.....</span> in Cochin, IL, between the hours of 9:00 AM and 5:00 PM, and you will be expected to provide <span class="companyFill">....</span>. with 35 hours of work per week. In your role as <span class="jobPosition">....</span>, you will report to the Director of Company, Ellen Stevens.</p>
+
+<p>The salary for this position will be Rs 4 lakh per year. This amount will be paid by check or direct deposit .</p>
+
+<p>This role will be considered exempt, so you will not be eligible for overtime compensation. As an exempt employee, you will be entitled to standard federal holidays plus 80 hours of paid time-off per year, which may be used at your discretion. You will also be eligible to participate in our employer sponsored health plan. Please review the enclosed Plan Summary for more information.</p>
+
+<p>The agreement between you and <span class="companyFill">.....</span>. will be classified as at-will, which means either party may terminate the agreement at any time, for any reason, with or without notice.</p>
+
+<p>All employees of <span class="companyFill">.....</span>. are expected to abide by the policies outlined in our Employee Handbook, which covers safety rules, conduct and behavior, and our business casual dress code. To find the full text of the Employee Handbook, please visit the company website and click on the tab marked “Handbook, Full Text”.</p>
+
+<p>If you choose to accept this position, please sign the enclosed Employee Agreement Form and Procedures Compliance Form and return both to my office by Tuesday, May 30 2019.</p>
+
+<p>When you report on your first day, you will be asked to present a state issued photo ID.</p>
+
+<p>For more information about this position or about <span class="companyFill">.....</span>, please contact my office at any time.</p>
+
+<p>Sincerely,</p>
+ 
+
+<p>HR Manager
+</p>
+<p>Anitha s</p>
+
+ 
+  			
+  			
+  			</div>
+  			
+  			</div>
+ 
+<div id="editor"></div>
+  	 		<div class="row" align="center"> 
+  				  <button type="button" id="generatePdf"  >GeneratePdf</button>
+  			</div>
+  	 		
+  	 	</div>
+  	 </div>
+  	</div>
+  	 </div>
   	 <hr>
   	 <div class="col-md-12">
   	 	<div class="row">
@@ -139,11 +191,12 @@
 										<tr>
 											<!-- <th></th> -->
 											<th>Id</th>
-											<th>First Name</th> 
-											<th>Last Name</th>
-											<th>Address</th>
+											<th>Full Name</th> 
+										    <th>Company Name</th>
+										    <th>Job Title</th>
+											 <th>Address</th>
 											<th>Date</th>
-											<th>Message</th> 
+											
 											<th>Download</th>   
 										</tr>
 									</thead>
@@ -176,11 +229,48 @@
 	$(document).ready(function(){
 		 $("#myModal").modal('hide'); 
 		
-		
+		 var doc = new jsPDF();
+		 
 		 $(function () {
              $('#example').datetimepicker();
          });
 		 
+		 
+		 
+		 var specialElementHandlers = {
+				    '#editor': function (element, renderer) {
+				        return true;
+				    }
+				};
+
+				$('#generatePdf').click(function () { 
+					
+				    doc.fromHTML($('#appointmentLetter').html(), 15, 15, {
+				        'width': 170,
+				            'elementHandlers': specialElementHandlers
+				    });
+				    doc.save('sample-file.pdf');
+				    doc = new jsPDF();
+				});
+
+		 $(document).on('change','#userForm-Title',function(){
+			 var employeeName=$("#userForm-Title").val()+" "+$("#userForm-FName").val()
+			 $("#employeeName").text(employeeName)
+		 });
+		 $(document).on('keyup','#userForm-FName',function(){
+			 var employeeName=$("#userForm-Title").val()+" "+$("#userForm-FName").val()
+			 $("#employeeName").text(employeeName)
+		 });
+		 $(document).on('keyup','#userForm-CName',function(){
+			 $(".companyFill").text($("#userForm-CName").val());
+		 });
+		 $(document).on('keyup','#userForm-JName',function(){
+			 $(".jobPosition").text($("#userForm-JName").val());
+		 });
+		 $(document).on('blur','#dateTime',function(){
+			 $("#dateFill").text($("#dateTime").val());
+			 
+		 });
 		//Default Table Load Start
 			
 			var url= "http://localhost:8080/forms";
@@ -206,11 +296,12 @@
 	            $.each(data,function(index, item){                                   
 	                var row = $('<tr>');                                    
 	                 row.append( $('<td>').append(item.id));
-	                row.append( $('<td>').append(item.firstname)); 
-	                row.append($('<td>').append(item.lastname));
-		            row.append( $('<td>').append(item.address));
+	                row.append( $('<td>').append(item.fullname)); 
+	                row.append($('<td>').append(item.companyname));
+		             row.append( $('<td>').append(item.address)); 
+		            row.append( $('<td>').append(item.jobtitle));
 	                row.append( $('<td>').append(item.dateTime));
-	                row.append( $('<td>').append(item.comments));  
+	             
 	                var Buttons="<button id='download_"+item.id+ "' class='downloadBtn btn btn-primary' >Download</button>";
 	                
 	                row.append( $('<td >').append(Buttons)); 
@@ -237,18 +328,21 @@
 		$(document).on('click','#addAppointment',function(){
 			var title=$("#userForm-Title").val();
 			var fName=$("#userForm-FName").val();
-			var lName=$("#userForm-LName").val();
+			var cName=$("#userForm-CName").val();
+			var jName=$("#userForm-JName").val();
 			var dateTime=$("#dateTime").val();
-			var address=$("#userForm-Address").val();
-			var message=$("#userForm-Message").val(); 
-			if(title != "" && fName != "" && lName != "" &&  message != "" && address !="" && dateTime != ""){  
+			 var address=$("#userForm-Address").val(); 
+			
+			if(title != "" && fName != "" && cName != "" &&  jName != "" &&address != "" &&  dateTime != ""){  
 				var formData={
 						title : title,
-						firstname : fName,
-						lastname : lName,
+						fullname : fName,
+						companyname : cName,
+						jobtitle:  jName ,
+						address:address,
 						dateTime : dateTime,
-						comments : message ,
-						address:address
+						 
+						
 				};
 				
 				console.log(formData);
@@ -297,11 +391,12 @@
 		           $.each(data,function(index, item){                                   
 		               var row = $('<tr>');                                    
 		                row.append( $('<td>').append(item.id));
-		               row.append( $('<td>').append(item.firstname)); 
-		               row.append($('<td>').append(item.lastname));
-		               row.append( $('<td>').append(item.address));
+		               row.append( $('<td>').append(item.fullname)); 
+		               row.append($('<td>').append(item.companyname));
+		                row.append( $('<td>').append(item.address)); 
+		             row.append($('<td>').append(item.jobtitle))
 		               row.append( $('<td>').append(item.dateTime));
-		               row.append( $('<td>').append(item.comments));  
+		              
 		               var Buttons="<button id='download_"+item.id+ "'  class='downloadBtn btn btn-primary' >Download</button>";
 		
 		

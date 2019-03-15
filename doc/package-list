@@ -1,0 +1,6 @@
+com.sona.task1
+com.sona.task1.ServiceImpl
+com.sona.task1.controller
+com.sona.task1.model
+com.sona.task1.repo
+com.sona.task1.service

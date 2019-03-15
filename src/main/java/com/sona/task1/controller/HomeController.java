@@ -28,7 +28,11 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.sona.task1.model.Forms;
 import com.sona.task1.repo.FormRepository;
-
+/***
+ * 
+ * @author uvionics
+ *
+ */
 @Controller
 public class HomeController {
 	
@@ -37,12 +41,23 @@ public class HomeController {
 	FormRepository formRepo;
 	
 	private static final Logger logger = LoggerFactory.getLogger(FormController.class);
+	
+	/***
+	 * 
+	 * @return
+	 */
 	@RequestMapping("/")
 	public String welcome() {
 
 		return "Form";
 	}
 	
+	/***
+	 * 
+	 * @param id
+	 * @return
+	 * @throws IOException
+	 */
 	@RequestMapping(value = "/pdfreport/{id}", method = RequestMethod.GET,
             produces = MediaType.APPLICATION_PDF_VALUE)
     public ResponseEntity<InputStreamResource> formReport(@PathVariable String id) throws IOException {

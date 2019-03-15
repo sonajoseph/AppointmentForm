@@ -14,7 +14,7 @@ public interface FormRepository extends JpaRepository<Forms, Integer>{
 	public List<Forms> findAll();
 	public Optional<Forms> findById(Integer id);
 	public Forms findOneById(Integer id);
-	public List<Forms> findByfirstname(String firstname);
+	public List<Forms> findByfullname(String firstname);
 	
 //	public Forms findById(Integer id);
 

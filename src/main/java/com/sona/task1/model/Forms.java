@@ -6,32 +6,38 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 @Entity
+@Table(name="appointment")
 public class Forms {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
 	private String title;
-	private String firstname;
-	private String lastname;
+	private String fullname;
+	
 	private String dateTime;
-	private String comments;
+	
+	private String companyname;
+	private String jobtitle;
 	private String address;
 	
 	public Forms() {}
 
-	public Forms(int id, String title, String firstname, String lastname, String dateTime, String comments,
+	public Forms(int id, String title, String fullname, String companyname,String jobtitle, String dateTime, 
 			String address) {
 		super();
 		this.id = id;
 		this.title = title;
-		this.firstname = firstname;
-		this.lastname = lastname;
+		this.fullname = fullname;
+		this.companyname=companyname;
+		this.jobtitle=jobtitle;
 		this.dateTime = dateTime;
-		this.comments = comments;
+		
 		this.address = address;
 	}
+	
 
 	public int getId() {
 		return id;
@@ -49,21 +55,15 @@ public class Forms {
 		this.title = title;
 	}
 
-	public String getFirstname() {
-		return firstname;
+	public String getFullname() {
+		return fullname;
 	}
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
+	public void setFullname(String fullname) {
+		this.fullname = fullname;
 	}
 
-	public String getLastname() {
-		return lastname;
-	}
-
-	public void setLastname(String lastname) {
-		this.lastname = lastname;
-	}
+	
 
 	public String getDateTime() {
 		return dateTime;
@@ -73,12 +73,24 @@ public class Forms {
 		this.dateTime = dateTime;
 	}
 
-	public String getComments() {
-		return comments;
+	
+
+	
+
+	public String getCompanyname() {
+		return companyname;
 	}
 
-	public void setComments(String comments) {
-		this.comments = comments;
+	public void setCompanyname(String companyname) {
+		this.companyname = companyname;
+	}
+
+	public String getJobtitle() {
+		return jobtitle;
+	}
+
+	public void setJobtitle(String jobtitle) {
+		this.jobtitle = jobtitle;
 	}
 
 	public String getAddress() {
@@ -91,8 +103,10 @@ public class Forms {
 
 	@Override
 	public String toString() {
-		return "Forms [id=" + id + ", title=" + title + ", firstname=" + firstname + ", lastname=" + lastname
-				+ ", dateTime=" + dateTime + ", comments=" + comments + ", address=" + address + "]";
+		return "Forms [id=" + id + ", title=" + title + ", fullname=" + fullname + ", dateTime=" + dateTime
+				+ ", companyname=" + companyname + ", jobtitle=" + jobtitle + ", address=" + address + "]";
 	}
+
+	
 
 }

@@ -7,7 +7,7 @@ import com.sona.task1.model.Forms;
 public interface FormService {
 	
 	public Forms save(Forms form);
-	public List<Forms> findByfirstname(String firstname);
+	public List<Forms> findByfullname(String fullname);
 	public List<Forms> findAll();
 
 }

@@ -50,9 +50,9 @@ public class FormController {
 	 }
 	
 	
-	@GetMapping("/{firstname}")
+	@GetMapping("/{fullname}")
 	
-	public List<Forms> findByFirstname(@PathVariable String firstname) {
-		return formService.findByfirstname(firstname);
+	public List<Forms> findByFullname(@PathVariable String fullname) {
+		return formService.findByfullname(fullname);
 	}
 }
