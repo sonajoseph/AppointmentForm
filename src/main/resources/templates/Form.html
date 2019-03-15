@@ -121,7 +121,7 @@
   		 </form>
   	</div>
   <div class="col-md-6" >
-  	 <h1>Letter</h1>
+  	 <h1>Appointment Letter</h1>
   	 <div id="appointmentLetter">
   	 	<div id="leftHeadder" align="left">
   	 		  
@@ -228,7 +228,7 @@
 <script>
 	$(document).ready(function(){
 		 $("#myModal").modal('hide'); 
-		
+		//to craete div as a pdf.
 		 var doc = new jsPDF();
 		 
 		 $(function () {
@@ -249,7 +249,7 @@
 				        'width': 170,
 				            'elementHandlers': specialElementHandlers
 				    });
-				    doc.save('sample-file.pdf');
+				    doc.save('letter.pdf');
 				    doc = new jsPDF();
 				});
 

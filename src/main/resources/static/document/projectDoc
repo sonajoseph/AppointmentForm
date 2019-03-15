@@ -1,0 +1,45 @@
+FormGeneration using Templates
+
+@Developer sona joseph
+
+This project is created by springboot application.started with spring intilaizer by adding maven dependencies.
+
+various packages under main class 
+:main package
+:controller
+:model
+:repository
+:service
+:serviceImplementation
+
+under resources
+:static
+:templates
+
+under test
+:Formcreation test-test class is written for one method called testByNames.
+
+various technologies used are:
+1.spingboot
+2.Database -mysql
+3.jquery ,javascript,html
+
+Flow of project
+
+Firstly an user fills up the form based on the fields created.The datas entered is saved to database and it will create a pdf report based on an 
+already designed template.
+
+various functions used
+
+save - for saving the user deatils to database
+getAllAppointments - for listing all appointments.
+getByFullName- list all the appointmnets with same name
+formReport- to generate pdf document of appointment.
+
+
+
+
+
+
+
+

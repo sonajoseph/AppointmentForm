@@ -1,4 +1,4 @@
-/*package com.sona.task1;
+package com.sona.task1;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -40,11 +40,13 @@ public class FormCreationApplicationTests {
 		form=new Forms();
 		
 		form.setId(1);
-		form.setFirstname("sona");
-		form.setLastname("joseph");
+		form.setFullname("sona");
+		form.setCompanyname("uvt");
 		form.setTitle("Ms");
-		form.setComments("hai");
+		form.setJobtitle("java developer");
 		form.setDateTime("12-12-2018 02:12:32");
+		form.setAddress("melvettom");
+	
 
 		System.out.println("items are"+">..................................."+form);
 		return form;
@@ -53,13 +55,13 @@ public class FormCreationApplicationTests {
 	@Test
 	public void testByNames(){
 		Forms s= new Forms();
-		when(formrepo.findByfirstname(anyString())).thenReturn(Arrays.asList(getForms()));
-		assertEquals(7, formService.findByfirstname("sona").size());
+		when(formrepo.findByfullname(anyString())).thenReturn(Arrays.asList(getForms()));
+		assertEquals(1, formService.findByfullname("hareesh").size());
 		
 		
 	}
 	
-	@Test
+	/*@Test
 	public void save() {
 		Forms f = new Forms(1000,"form","dsg","dsjhgsjd","adhfgsdjh","sdhghgsdjf","sdhgjfhgdjs");
 		Forms d = formrepo.save(f);
@@ -67,10 +69,9 @@ public class FormCreationApplicationTests {
 		assertEquals("form", "");
 	}
 	
-	
+	*/
 
 	
 	
 
 }
-*/

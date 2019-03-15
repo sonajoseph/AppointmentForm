@@ -36,9 +36,9 @@ public class GeneratePdfReport {
            PdfWriter writer = PdfWriter.getInstance(document, out);
            document.open();
 
-           document.add(new Paragraph( "Dear "+letterForm.getTitle()+" "+letterForm.getFullname()));
+    document.add(new Paragraph( "Dear "+letterForm.getTitle()+" "+letterForm.getFullname()));
 
-           document.add(new Paragraph("After a thorough and comprehensive review, I am pleased to announce that "+letterForm.getCompanyname()+". would like to offer you the position of "+letterForm.getJobtitle()));
+    document.add(new Paragraph("After a thorough and comprehensive review, I am pleased to announce that "+letterForm.getCompanyname()+". would like to offer you the position of "+letterForm.getJobtitle()));
 
    	document.add(new Paragraph( "Your role will begin on "+letterForm.getDateTime()+". You will report every weekday to the "+letterForm.getCompanyname()+" in Cochin, IL, between the hours of 9:00 AM and 5:00 PM, and you will be expected to provide "+letterForm.getCompanyname()+". with 35 hours of work per week. In your role as"+letterForm.getJobtitle()+", you will report to the Director of Finance, Ellen Stevens."));
 
